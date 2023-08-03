@@ -1,19 +1,9 @@
 ---
 layout: default
 title: Curriculum
+description: Curriculum for Interpretable AI made by SAIL Members
 permalink: /curriculum/
-description:  ee
 nav: true
-pagination:
-  enabled: true
-  collection: posts
-  permalink: /page/:num/
-  per_page: 10
-  sort_field: date
-  sort_reverse: true
-  trail:
-    before: 1 # The number of links before the current page
-    after: 3  # The number of links after the current page
 ---
 
 <div class="post">
