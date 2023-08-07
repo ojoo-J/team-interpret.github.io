@@ -58,7 +58,7 @@ nav: true
   </card>
       <card class="column-second">
       {% if post.img %}
-          <img src="{{ post.img }}" width="145px" height="145px" style="margin-top:20px;margin-left:40px;border-radius: 20px;"> 
+          <img src="{{ post.img }}" width="205px" height="145px" style="margin-top:20px;margin-left:40px;border-radius: 20px;"> 
       {% endif %}
       </card>
     {% endfor %}
