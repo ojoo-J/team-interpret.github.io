@@ -24,7 +24,7 @@ img: "/assets/img/neurons_as_neurons/communication.png"
 
 There are several attempts to understand human in the fields of biology, neuroscience, ethology, and philosophy. Especially, neuroscience interprets human with neurons in a brain. Neurons in a brain process massive information and the intelligence increases as the number of neurons increases. However, understanding the general role of a single neuron is hardly discovered as we can not test the neuron separately excluding other neurons. However, unlike the neurons in neuroscience, neurons in deep learning could be tested easily as we can debug the network. Recent studies have shown the role of individual neurons in both vision and NLP domains and we can understand the interaction between neurons well. If the neurons in our brain compute and  process the signals with the neurons in deep learning, we can further understand neurons in both field. To do this, we should know how similar neurons in neuroscience and deep learning are. 
 
-The reason why I wrote this post, even though I studied deep learning, is that understanding the neurons in neuroscience can further helps to reveal the mechanisms of neurons in deep learning. To components are similar to each other, but have distinct difference such as learning processes. We study the question **How much neurons are similar in both fields?** Before answering this question we should answer this question. **What is neurons in deep learning?**
+The reason why I wrote this post, even though I studied deep learning, is that understanding the neurons in neuroscience can further helps to reveal the mechanisms of neurons in deep learning. To components are similar to each other, but have distinct difference such as learning processes. We study the question **How much neurons are similar in both fields?** Before answering this question we should answer this question. **What is a neuron in deep learning?**
 
 
 ## Neuroscience
@@ -34,7 +34,7 @@ Human body has cell and there are cells called **neuron** whose role is the tran
 
 $$
 \begin{gather}
-\text{Number of Neurons} \times \text{Number of Synapses per a neuron} \approx \text{Total number of synapses} \\ 
+\text{Number of neurons} \times \text{Number of synapses per a neuron} \approx \text{Total number of synapses} \\ 
 \Rightarrow 860 \text{B} \times 7,000 \approx 6 \text{trillion}
 \end{gather}
 $$
