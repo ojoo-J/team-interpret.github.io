@@ -13,7 +13,7 @@ authors:
 bibliography: all.bib
 giscus_comments: true
 disqus_comments: false
-date: 2023-08-07
+date: 2023-08-06
 featured: true
 title: 'Curriculum for Interpretability'
 description: ''
