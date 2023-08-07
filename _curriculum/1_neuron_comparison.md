@@ -88,7 +88,7 @@ Figure. Basic structure of a neuron. The dendrite receives input chemical, axon 
 A neuron is normally a negative state (-70mv) and if a `dendrite` receives negative ion, the state is still negative. On the other hand, if `dendrite` receives positive ions such as $Na^{+}$, the dendrite part becomes positive state. Then, the electricity flows from `dendrite` to `axon terminal` in a neuron to make `Neutral Charge Equilibrium` state. The pipe for the transmission is called axon and the leaf part is `axon terminal`. When the `axon terminal` becomes positive state, neurotransmitters spread. 
 
 <figure style="text-align:center; display:block; grid-column:middle;">
-<img src="/assets/kor/neurons_as_neurons/neuron_state.png" style="width:180%">
+<img src="/assets/img/neurons_as_neurons/neuron_state.png" style="width:180%">
 <figcaption>
   How a neuron transmits electrical signal from dendrites to axon terminals. Neuron is basically negative state (-), the activated part are relatively positive state (+). 
 </figcaption>
