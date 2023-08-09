@@ -19,7 +19,6 @@ title: 'Curriculum for Interpretability'
 description: ''
 ---
 
-
 ### 1. Neurons 
 
 | Topic | Keywords |  
@@ -60,3 +59,15 @@ Interpretation Methods 2 | what-when-where plot<d-cite key="mcgrath2022acquisiti
 | Interpretation Methods 1 | TBD  | 
 | Interpretation Methods 2 | TBD | 
 
+
+---
+
+## Acknowledgement
+
+
+
+<figure>
+<center>
+<img src="/assets/img/curriculum.png" style="width:300px;height:200px">
+</center>
+</figure>
