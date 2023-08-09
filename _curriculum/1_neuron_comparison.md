@@ -15,7 +15,7 @@ giscus_comments: true
 disqus_comments: false
 date: 2023-08-07
 featured: true
-title: 'Neuron in Neuroscience and Deep Learning'
+title: '1.1 Neurons in Neuroscience and Deep Learning'
 description: 'How can we compare neurons in neuroscience and deep-learning'
 img: "/assets/img/neurons_as_neurons/communication.png"
 ---
