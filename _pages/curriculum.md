@@ -6,10 +6,11 @@ permalink: /curriculum/
 nav: true
 ---
 
+
 <div class="post">
   <div class="header-bar">
-    <h1>{{ page.title }}</h1>
-    <h2>{{ page.description }}</h2>
+    <h1 style='font-family:"Fira Sans"'>{{ page.title }}</h1>
+    <h2 style='font-family:"Fira Sans"'>{{ page.description }}</h2>
   </div>
   <ul class="post-list">
     {%- assign sorted_pages = site.curriculum | sort: "date" %}
@@ -25,7 +26,7 @@ nav: true
       <card class="column-first" style="border-bottom:#e4e4e4 solid; padding-left: 0px;" >
       <h2>
         {% if post.redirect == blank %}
-          <a class="post-title" href="{{ post.url | prepend: site.baseurl }}" style="text-decoration:none; font-size: 20px; ">{{ post.title }}</a>
+          <a class="post-title" href="{{ post.url | prepend: site.baseurl }}" style="text-decoration:none; font-size: 20px; color:#362f5b ">{{ post.title }}</a>
         {% else %}
         <a class="post-title" href="{% if post.redirect contains '://' %}{{ post.redirect }}{% else %}{{ post.redirect | relative_url }}{% endif %}">{{ post.title }}</a>
         {% endif %}
@@ -58,7 +59,7 @@ nav: true
   </card>
       <card class="column-second">
       {% if post.img %}
-          <img src="{{ post.img }}" width="205px" height="145px" style="margin-top:20px;margin-left:40px;border-radius: 20px;"> 
+          <img src="{{ post.img }}" width="180px" height="125px" style="margin-top:20px;margin-left:40px;border-radius: 20px;"> 
       {% endif %}
       </card>
     {% endfor %}
