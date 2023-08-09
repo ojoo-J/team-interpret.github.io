@@ -16,6 +16,7 @@ disqus_comments: false
 date: 2023-08-06
 featured: true
 title: 'Curriculum for Interpretability'
+img : /assets/img/curriculum.png
 description: ''
 ---
 
