@@ -45,7 +45,7 @@ Interpretation Methods 2 | what-when-where plot<d-cite key="mcgrath2022acquisiti
 | Topic | Keywords |  
 | :-: |  :-- |
 | Architecture | Kernel, Stride, Feature |  
-| Circuits | Excitatory Neuron and Inhibitory Neuron forming feature hierarchy  |  
+| Circuits | Excitatory Neuron and Inhibitory Neuron forming feature hierarchy  <d-cite key="cammarata2021curve"/> |  
 | Interpretation Methods 1 | feature visualization,   | 
 | Interpretation Methods 2 | t-SNE, U-MAP, activation patch | 
 
