@@ -149,3 +149,7 @@ d-appendix {
     }
   }
 }
+// Citations in tables fix
+tr:has(d-cite){
+  position: relative;
+}
