@@ -6,7 +6,7 @@ tags: timeseries, discretization
 giscus_comments: true
 date: 2023-08-02
 featured: true
-
+img: "/assets/posts/discretization/cut.png"
 authors:
   - name: Jungmin Kim
     affiliations:
