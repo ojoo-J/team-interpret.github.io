@@ -4,10 +4,10 @@ authors:
     - name: Bumjin Park
       affiliations:
         name: KAIST
-    - name: Youngju Joung
+    - name: Enver Menadjiev
       affiliations:
         name: KAIST
-    - name: Enver Menadjiev
+    - name: Youngju Joung
       affiliations:
         name: KAIST
 bibliography: all.bib
