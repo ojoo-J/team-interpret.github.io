@@ -17,8 +17,8 @@ nav: true
     <h1 style='font-family:"Fira Sans"'>{{ page.title }}</h1>
     <h2 style='font-family:"Fira Sans"'>{{ page.description }}</h2>
     <hr>
-    <p style='font-family:"Fira Sans";text-align:left;'> 
-      The full list of curriculum can be found in  <a href="https://team-interpret.github.io/curriculum/curriculum/"> 📚 </a>  <br>
+    <p style='font-family:"Fira Sans";text-align:left;font-size : 22px; '> 
+      The full list of curriculum can be found in  <a href="https://team-interpret.github.io/curriculum/curriculum/"> [📚] </a>  <br>
       This work is licensed under a Creative Commons International License. 
         <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
       <img alt="Creative Commons License" style="border-width:0;text-align:center;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
