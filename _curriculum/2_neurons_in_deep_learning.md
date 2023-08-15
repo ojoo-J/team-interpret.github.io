@@ -16,7 +16,7 @@ disqus_comments: false
 date: 2023-08-14
 featured: true
 title: '1.2 Neurons in Deep Learning'
-description: 'How can we interpret neurons in deep learning?'
+description:  '📙 Chapter 1. Neuron <br> <em> How can we interpret neurons in deep learning?</em>'
 img: "/assets/img/neurons_in_deep_learning/linear.png"
 ---
 ## Introduction 
