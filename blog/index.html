@@ -38,7 +38,7 @@ pagination:
     {% assign year = post.date | date: "%Y" %}
     {% assign tags = post.tags | join: "" %}
     {% assign categories = post.categories | join: "" %}
-    <card class="column-first" style="border-bottom:#e4e4e4 solid; padding-left: 0px;" >
+    <div class="column-first" style="border-bottom:#e4e4e4 solid; padding-left: 0px;" >
 
     <li style="padding-bottom:5px;padding-top:12px">
 {%- if post.thumbnail -%}
@@ -96,12 +96,12 @@ pagination:
         {%- endif -%}
         </li>
 
-      </card>
-      <card class="column-second">
+      </div>
+      <div class="column-second">
         {% if post.img %}
-            <img src="{{ post.img }}" width="180px" height="125px" style="margin-top:20px;margin-left:40px;border-radius: 20px;"> 
+          <img src="{{ post.img }}" width="170px" height="135px" style="margin-top:10px;margin-left:20px;border-radius: 20px;border:solid 1px;">   
         {% endif %}
-      </card>
+      </div>
     
 
     {% endfor %}

@@ -15,9 +15,9 @@ giscus_comments: true
 disqus_comments: false
 date: 2023-08-06
 featured: true
-title: 'Curriculum for Interpretability'
+title: '📚 Curriculum for Interpretability'
+description: Curriculum for the interpretability made by SAIL Members.
 img : /assets/img/curriculum.png
-description: ''
 ---
 
 ### 1. Neurons 
@@ -25,7 +25,7 @@ description: ''
 | Topic | Keywords |  
 | :-: |  :-- |
 Neurons in Neuroscience [[link]](https://team-interpret.github.io/curriculum/1_neuron_comparison/) | neuron, synapse, electrical signal, aggregation of neurons
-Neurons in Deep learning | interpret linear, CNN, RNN, and GPT|
+Neurons in Deep learning [[link]](https://team-interpret.github.io/curriculum/2_neurons_in_deep_learning/) | interpret linear, CNN, RNN, and GPT|
 Interpretation Methods 1 | Probing (linear, non-linear)<d-cite key="li2022emergent"/>, CAV <d-footnote> Concept Activation Vector </d-footnote>, network dissect,  | 
 Interpretation Methods 2 | what-when-where plot<d-cite key="mcgrath2022acquisition"/>, | 
 
