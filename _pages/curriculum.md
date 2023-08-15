@@ -6,6 +6,11 @@ permalink: /curriculum/
 nav: true
 ---
 
+  <style>
+    h2 {
+      font-weight: 500
+    }
+  </style>
 
 <div class="post">
   <div class="header-bar" style='padding-bottom:0px;'>
@@ -19,6 +24,7 @@ nav: true
       <img alt="Creative Commons License" style="border-width:0;text-align:center;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
     </p> 
   </div>
+
   <ul class="post-list">
     {%- assign sorted_pages = site.curriculum | sort: "date" %}
     {%- assign sorted_pages = sorted_pages | reverse -%} 
