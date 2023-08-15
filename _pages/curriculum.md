@@ -10,9 +10,12 @@ nav: true
     h2 {
       font-weight: 500
     }
+    .column-second {
+      margin-bottom: 10px
+    }
   </style>
 
-<div class="post">
+<div class="post" style='padding-bottom:450px'>
   <div class="header-bar" style='padding-bottom:0px;'>
     <h1 style='font-family:"Fira Sans"'>{{ page.title }}</h1>
     <h2 style='font-family:"Fira Sans"'>{{ page.description }}</h2>
