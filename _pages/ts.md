@@ -3,7 +3,7 @@ layout: default
 title: TS
 description: TimeSeries
 permalink: /ts/
-nav: true
+nav: false
 ---
 
   <style>
