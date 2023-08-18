@@ -115,6 +115,86 @@ As humans have 7,000 synapses per neuron, we can think that GPT3 has a similar n
 As we think more about a deep neural network with a metaphor to a human brain, the computational graph is highly interpretable and the individual components handle very simple computations like neurons in our brain. Recent work in interpretability is about discovering meanings of neurons and the work like this can shed light on the interpretation of the deep neural network. We believe still deep dissection of neural network can give better interpretation of deep neural networks. 
 
 
+--- 
+
+## Differences between Neuroscience and Deep Learning
+
+### Rate-coding
+
+Biological neurons communicate via receiving and transmitting excitatory spikes. Having received multiple spikes, neuron is more likely to produce multiple spikes of its own. However, unlike in deep learning, biological neurons do not receive spikes simultaneously. Moreover, neuron rates may coincide, and synchronize between multiple neurons, which is not presented in the deep learning.
+
+<figure style="text-align:left; display:block;width:100;">
+<div style="display: flex; justify-content: center">
+<img src="/assets/img/neurons_in_deep_learning/rate_coding.png" style="width:75%; margin: auto 0;">
+</div>
+<figcaption>
+  The key-neurons output scalars which are multiplied with weights (synapses) in the value-neurons. Then, the values neurons compute them (linear sum) to make a single output respectively.
+</figcaption>
+</figure>
+
+### Synaptic strength
+
+Spikes are not equal, since the after reaching axon terminal the amount of electrical energy strongly depends on the strength of the synapse. Therefore, with the same output signals from preceding neurons, the received signal may differ. Similarly, the strength of the signal in deep learning is usually presented by the weight of synapse.
+
+<figure style="text-align:left; display:block;width:100;">
+<img src="/assets/img/neurons_in_deep_learning/synaptic_strength.jpg" style="width:100%">
+<figcaption>
+  The key-neurons output scalars which are multiplied with weights (synapses) in the value-neurons. Then, the values neurons compute them (linear sum) to make a single output respectively.
+</figcaption>
+</figure>
+
+
+### Excitatory and inhibitory neurotransmitters
+
+If biological neurons are examined closely, it becomes evident that there are two main classes of neurotransmitters <d-footnote>Elements, transmitted with signal </d-footnote>, namely excitatory, and inhibitory. The former ones are responsible for amplifying transmitted signal, while the latter decrease its strength. Although most of the neurons are excitatory, inhibitory neurons play crucial role in selecting, and routing information, preventing epileptic activity <d-footnote> Chaotic firing of many neurons in the network</d-footnote>.
+
+### Conclusion
+
+* The deep learning neuron receives inputs, or activations, from other neurons. The activations are rate-coded representations of the spiking of biological neurons.
+* The activations are multiplied by synaptic weights. These weights are models of synaptic strengths in biological neurons, and also model inhibitory transmission, in that the weights may take on negative values.
+* The weighted activations are summed together, modeling the accumulation process that happens in the cell body of a biological neuron.
+* A bias term is added to the sum, modeling the general sensitivity of neuron.
+* Finally, the summed value is shaped by an activation function — typically one that limits the minimum or maximum output value (or both), such as a sigmoid function. This models the intrinsic minimum spiking rate of biological neurons (zero) or the maximum rate (due to details in the physiological mechanisms by which spikes are generated).
+
+## Steps to match Biological and Deep Learning Neurons
+
+### Temporal Coding
+
+Deep learning relies on rate-based coding, in which each neuron’s activation is a single numeric value that models the average spiking rate in response to a given stimulus (be it from other neurons or from an external stimulus). The collective set of spiking rate values within a single layer of the network is typically organized as a vector of numbers, and this vector is referred to as the representation of an external stimulus, at that layer.
+
+The expressiveness of rate-based neural coding is much lower than that which is possible with neural codes (representations) based on the relative time between spikes on multiple neurons. As a simple example of the existence of this type of code in biology, consider the auditory system. When sound waves reach our ears, our brain processes them to determine the type of animal, object, or phenomenon that produced the sound, but also to estimate the direction from which the sound came (localization). One way in which sound location is determined is based on the fact that sounds from the right will reach the right ear first, then the left ear. Auditory neurons close to the right and left ears exhibit spike timing that reflects this acoustic timing difference. Auditory neurons the are more medially located (near the midline of the body) receive input from neurons near both ears and are selective for the location of the sound, thanks to this temporal coding.
+
+<figure style="text-align:left; display:block;width:100;">
+<img src="/assets/img/neurons_in_deep_learning/ear_processing.png" style="width:100%">
+<figcaption>
+  The key-neurons output scalars which are multiplied with weights (synapses) in the value-neurons. Then, the values neurons compute them (linear sum) to make a single output respectively.
+</figcaption>
+</figure>
+
+More generically, consider the simple example of a single neuron receiving input from two other neurons, each of which send identical input: a short train of N uniformly spaced (in time) excitatory spikes over 100 ms. All else being equal, this will generate some stereotypical response in the receiving neuron. In contrast, if one of the input neurons sent all if its spikes in the first 20 ms (of the 100 ms interval), and the other input neuron sent all of its spikes in the final 20 ms, the response of the receiving neuron is likely to be notably different. Thus, even though the spiking-rate of the input neurons is identical in each scenario (10N spikes/sec) the temporal coding is quite different, and the response of the receiving neuron can be quite different as well. Importantly, there can exist many input-output combinations when using a temporal code, even when the number of input spikes is low, constant, or both. This is what we mean by a more expressive coding scheme. In regards to AI, a model that utilizes temporal coding can conceivably perform much more complex tasks than a deep learning model with the same number of neurons.
+
+<figure style="text-align:left; display:block;width:100;">
+<div style="display: flex; justify-content: center">
+<img src="/assets/img/neurons_in_deep_learning/temporal_coding.png" style="width:75%">
+</div>
+<figcaption>
+  The key-neurons output scalars which are multiplied with weights (synapses) in the value-neurons. Then, the values neurons compute them (linear sum) to make a single output respectively.
+</figcaption>
+</figure>
+
+### Inhibitory neurons
+
+Based on our simple description of biological and deep learning neurons, the distinction between excitatory and inhibitory neurons can be mimicked by deep learning neurons. Namely, one can mimic a biological inhibitory neuron simply by ensuring its deep learning equivalent has negative values for all synaptic weights between its axons and the dendrites of neurons to which it projects. Conversely, when mimicking a biological excitatory neuron, such synapses should always have positive weights. However, training and implementation will be easier if one simply requires that all synapses are positive-valued (perhaps by applying a ReLU function to the weights after each training iteration), and use an activation function that produces negative (positive) values for the inhibitory (excitatory) neurons.
+
+It’s not certain, but one possibility is that the use of explicit inhibitory neurons helps to constrain the overall parameter space while allowing for the evolution or development of sub-network structures that promote fast learning. In biological systems, it is not necessary for the brain to be able to learn any input-output relationship, or execute any possible spiking sequence. We live in a world with fixed physical laws, with species whose individual members share many common within-species behavioral traits that need not be explicitly learned. Limiting the possible circuit connectivity and dynamic activity of a network is tantamount to limiting the solution space over which a training method must search. 
+
+Another potential benefit of inhibitory neurons, related to the use of structured canonical circuits as just mentioned, is that inhibitory neurons may effectively "gate off" large numbers of neurons that are unnecessary for processing of a given sample or task, thereby lowering energy requirements.
+
+### Low-energy spike-based hardware
+
+The energy efficiency of biological neurons, relative to conventional computing hardware, is largely due to two characteristics of these neurons. Firstly, biological neurons transmit only short bursts of analog energy (spikes) rather than maintaining many bits that represent a single floating-point or integer number. In conventional hardware, these bits require persistent energy flow to maintain the 0 or 1 state, unless much slower types of memory are used (non-volatile RAM).
+
+Secondly, memory is co-located with processing in biological neurons. That is, the synaptic strengths are the long-term memory of the network (recurrent connectivity can maintain short-term memory, but that’s a topic for some other post), they are involved in the processing (spike weighting and transmission), and are very close to other aspects of the processing (energy accumulation in the cell body). In contrast, conventional hardware is regularly transmitting bits from RAM to the processor — a considerable distance and a considerable energy drain.
 
 ---
 
