@@ -178,6 +178,9 @@ collections:
   curriculum:
     output: true
     permalink: /curriculum/:path/
+  ts:
+    output: true
+    permalink: /ts/:path/
 
 announcements:
   enabled: true
