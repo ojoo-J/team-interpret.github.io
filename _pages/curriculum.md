@@ -15,7 +15,7 @@ nav: true
     }
   </style>
 
-<div class="post" style='padding-bottom:450px'>
+<div class="post" style='padding-bottom:650px'>
   <div class="header-bar" style='padding-bottom:0px;'>
     <h1 style='font-family:"Fira Sans"'>{{ page.title }}</h1>
     <h2 style='font-family:"Fira Sans"'>{{ page.description }}</h2>
