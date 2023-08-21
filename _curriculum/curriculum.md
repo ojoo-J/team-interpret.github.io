@@ -26,7 +26,7 @@ img : /assets/img/curriculum.png
 | :-: |  :-- |
 Neurons in Neuroscience [[link]](https://team-interpret.github.io/curriculum/1_neuron_comparison/) | neuron, synapse, electrical signal, aggregation of neurons
 Neurons in Deep learning [[link]](https://team-interpret.github.io/curriculum/2_neurons_in_deep_learning/) | interpret linear, CNN, RNN, and GPT|
-Interpretation Methods 1 | Probing (linear, non-linear)<d-cite key="li2022emergent"/>, CAV <d-footnote> Concept Activation Vector </d-footnote>, network dissect,  | 
+Interpretation Methods 1 [[link](https://team-interpret.github.io/curriculum/3_interpretneurons_with_neurons/)] | Probing (linear, non-linear)<d-cite key="li2022emergent"/>, CAV <d-footnote> Concept Activation Vector </d-footnote>  | 
 Interpretation Methods 2 | what-when-where plot<d-cite key="mcgrath2022acquisition"/>, | 
 
 
