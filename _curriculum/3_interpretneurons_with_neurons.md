@@ -155,20 +155,26 @@ If you use a non-linear classifier in probing, it is called linear probing.
 
 ## Interpret Chess Concepts ♜
 
-Chess has many meaningful concepts in board states such as “Checkmate”, “ “. 
+Chess has many meaningful concepts in board states such as “Checkmate” and “Mobility“. 
 Thomas et al. <d-cite key="mcgrath2022acquisition"/> investigate the concepts in chess with AlphaZero model.
-Note that the network obtains only a board state and outputs preferred action and there is no explicit encode of concepts. Therefore, verification of neurons is about the existence of meaningful chess concepts in the internal representations. 
+Note that the network obtains only a board state and outputs preferred action and there is no explicit encoding of concepts. Therefore, the verification of neurons is about the existence of meaningful chess concepts in the internal representations. 
 
+<figure display:block;width:100;" >
+<p align="center"><img src="/assets/img/neurons_interpret_neurons/Interpret Chess Concepts.png" style="width:60%"></p>
+<figcaption>
+Figure. Probing for human-encoded chess concepts in the AlphaZero network: generalize linear function $g(z^d)$ is trained to approximate $c(z^0)$.
+</figcaption>
+</figure>
 
 <figure style="text-align:left; display:block;width:100;" >
 <h4>What-When-Where plot for probing concepts.</h4>
 <img src="/assets/img/neurons_interpret_neurons/chess_concept_king.png" style="width:100%"/>
 <figcaption markdown="1" >
-Figure.  *What-when-where* (Checkmate-Training Step-Layer) plot to visualize the emergence of concepts in the network. Note that the z-axis is the accuracy of the probing network. As the training goes on, the concept checkmate emerges. 
+Figure.  *What-when-where* (Checkmate-Training Step-Layer) plot to visualize the emergence of concepts in the network. Note that the z-axis is the accuracy of the probing network. As the training goes on, the concept of checkmate emerges. 
 </figcaption>
 <img src="/assets/img/neurons_interpret_neurons/chess_concept_queen.png" style="width:100%"/>
 <figcaption markdown="1" >
-Figure.  *What-when-where* (Queen-Training Step-Layer) plot to visualize the emergence of concepts in the network. As training goes, the concept "Can capture queen" emerges. The emerged layers are deeper compared to the checkmate concept. 
+Figure.  *What-when-where* (Queen-Training Step-Layer) plot to visualize the emergence of concepts in the network. As training goes on, the concept "Can capture queen" emerges. The emerged layers are deeper compared to the checkmate concept. 
 </figcaption>
 </figure>
 
@@ -187,16 +193,16 @@ Figure. Regression probing.
  
 The natural question followed by the concept is the usefulness of concepts.  
 That is, how important the concept stripe is for the class zebra. 
-Similarly, how much is the concept red important for the class firefighter? 
+Similarly, how much is the concept of red important for the class firefighter? 
 To answer this question, we need a qualitative measure with concepts and classification logits. 
-Testing with Concept Activation Vector (TCAV) <d-cite key="kim2018interpretability"/> is a measure which counts the number of samples that increased the class logic as the activation intervened with concept direction. 
+Testing with Concept Activation Vector (TCAV) <d-cite key="kim2018interpretability"/> is a measure that counts the number of samples that increased the class logic as the activation intervened with concept direction. 
 
 Assume that we obtained the directional vector $v$  for the concept $C$ with probing. That is, $v_C^l$ is a weight in the probing classifier for concept $C$ and layer $l$. 
-As we increase activation pattern with the direction, we get more likelihood fo concept $C$. 
+As we increase the activation pattern with the direction, we get more likelihood of concept $C$. 
 That is, we can intervene the representation $f_l(x)$ in the direction of $v_C^l$,
 $f_l(x) + \epsilon v_C^l$. TCAV utilizes the intervention to check whether it increases the classification logit.
-This is a natural way of increasing concept. For example, increased concept of stripe pattern will increase the logit of zebra class. 
-TCAV is a quantitative measure to this question and answers it with the ratio of samples which increased the logic. 
+This is a natural way of increasing concept. For example, the increased concept of stripe pattern will increase the logit of the zebra class. 
+TCAV is a quantitative measure to this question and answers it with the ratio of samples which increases the logic. 
 
 In summary: the classification logit will be increased if the amount of a concept increases.
 
@@ -212,7 +218,7 @@ S_{C,k,l}(\mathbf{x})
 \end{aligned}
 $$
 
-where $h_{l,k}$ is the logit of class $k$ and $\mathbf{x}$ is input. Note that CS computes the alignment between directional vector and the concept activation vector. 
+where $h_{l,k}$ is the logit of class $k$ and $\mathbf{x}$ is input. Note that CS computes the alignment between the directional vector and the concept activation vector. 
 
 ### TCAV 
 
@@ -232,15 +238,15 @@ where $X_k$ is the collection of samples with label $k$ such as collection of ze
 <figure style="text-align:left; display:block;width:100;" >
 <img src="/assets/img/neurons_interpret_neurons/tcav.png" style="width:100%">
 <figcaption markdown="1">
-Figure. TCAV. results for two classes and three concepts respectively. (*) indicates the failure cases for statistical test. Note that <br>
-**(1)** red has higher TCAV score than other concepts in fire engine class. <br>
-**(2)** only specific modules encode stripe patterns for zebra class.  <br> © Copyright: TCAV paper 
+Figure. TCAV. results for two classes and three concepts respectively. (*) indicates the failure cases for the statistical test. Note that <br>
+**(1)** Red has a higher TCAV score than other concepts in the fire engine class. <br>
+**(2)** Only specific modules encode stripe patterns for the zebra class.  <br> © Copyright: TCAV paper 
 </figcaption>
 </figure>
 
 ## Conclusion 
 
-In this section, we study a way to interpret neurons (conceptual representation) with another neurons (probing classifier). Probing technique is widely used to verify the semantic information in neural networks. Recently, Kenneth<d-cite key="li2022emergent"/> applied both linear and non-linear probings to verify the existence of conceptual board state in GPT. We believe more techniques utilizing neurons to interpret neurons in trained neural networks will be developed. 
+In this section, we study a way to interpret neurons (conceptual representation) with other neurons (probing classifier). The probing technique is widely used to verify the semantic information in neural networks. Recently, Kenneth<d-cite key="li2022emergent"/> applied both linear and non-linear probings to verify the existence of conceptual board state in GPT. We believe more techniques utilizing neurons to interpret neurons in trained neural networks will be developed. 
 
 
 
