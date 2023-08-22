@@ -23,6 +23,10 @@ hr {
   border-top: 1px solid var(--global-divider-color);
 }
 
+p, span, li, ul {
+  font-weight: 350;
+}
+
 table {
   td,
   th {
